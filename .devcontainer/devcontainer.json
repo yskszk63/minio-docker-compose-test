@@ -1,0 +1,22 @@
+{
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+  "mounts": [
+    {
+      "type": "bind",
+      "source": "${localWorkspaceFolder}",
+      "target": "/workspace/${localWorkspaceFolderBasename}",
+      "consistency": "cached"
+    }
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/christophermacgown/devcontainer-features/minio-client:1": {},
+    "ghcr.io/devcontainers/features/go:1": {}
+  },
+  "remoteEnv": {
+    "AWS_ACCESS_KEY_ID": "super",
+    "AWS_SECRET_ACCESS_KEY": "secretsecret"
+  }
+}
